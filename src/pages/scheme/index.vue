@@ -1,5 +1,5 @@
 <template>
-	<div class="about-page flex-ct-x">About</div>
+	<div class="scheme-page flex-ct-x">Scheme</div>
 </template>
 
 <script>
