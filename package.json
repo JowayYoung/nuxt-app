@@ -1,0 +1,29 @@
+{
+	"name": "nuxt-app",
+	"version": "1.0.0",
+	"description": "",
+	"keywords": [],
+	"author": "",
+	"license": "MIT",
+	"scripts": {
+		"dev": "nuxt",
+		"prod": "nuxt build",
+		"remove": "rimraf .nuxt node_modules yarn.lock"
+	},
+	"dependencies": {
+		"@nuxtjs/axios": "5.12.4",
+		"@nuxtjs/style-resources": "1.0.0",
+		"nuxt": "2.14.12",
+		"trample": "0.2.3"
+	},
+	"devDependencies": {
+		"cross-env": "7.0.3",
+		"fibers": "5.0.0",
+		"sass": "1.30.0",
+		"sass-loader": "10.1.0"
+	},
+	"engines": {
+		"node": ">= 12.0.0",
+		"npm": ">= 6.9.0"
+	}
+}

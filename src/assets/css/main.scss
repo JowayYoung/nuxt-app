@@ -1,0 +1,11 @@
+body {
+	-webkit-overflow-scrolling: touch;
+}
+div[class*=-page] {
+	overflow: hidden;
+	height: 100vh;
+	background-color: #282c34;
+	font-weight: bold;
+	font-size: 30px;
+	color: #fff;
+}
