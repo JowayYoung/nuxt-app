@@ -1,6 +1,6 @@
 async function AutoResponse() {
 	if (innerWidth >= 768) {
-		document.documentElement.style.fontSize = "100px";
+		document.documentElement.style.fontSize = "50px";
 	} else if (process.client) {
 		const _ = await import("trample");
 		_.AutoResponse();

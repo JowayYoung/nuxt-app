@@ -14,6 +14,7 @@
 		"@nuxtjs/axios": "5.12.4",
 		"@nuxtjs/style-resources": "1.0.0",
 		"nuxt": "2.14.12",
+		"swiper": "5.4.5",
 		"trample": "0.2.3"
 	},
 	"devDependencies": {

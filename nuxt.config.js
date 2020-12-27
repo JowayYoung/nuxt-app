@@ -21,9 +21,7 @@ export default {
 			}
 		},
 		postcss: {
-			preset: {
-				browsers: BROWSERS
-			}
+			preset: { browsers: BROWSERS }
 		}
 	},
 	env: {
@@ -60,7 +58,10 @@ export default {
 		failedColor: "#f66"
 	},
 	styleResources: {
-		scss: "@/assets/css/global.scss"
+		scss: [
+			"@/assets/css/theme.scss",
+			"@/assets/css/mixin.scss"
+		]
 	},
 	/** 网络请求 **/
 	axios: {
