@@ -1,5 +1,5 @@
 <template>
-	<div class="contact-page">
+	<div class="contact-page flex-ct-y">
 		<navbar></navbar>
 		<div class="contact-banner flex-ct-y">
 			<h3 class="contact-title">联系我们</h3>
@@ -16,14 +16,17 @@
 			</div>
 			<a class="contact-detail-right flex-ct-x" href="https://map.baidu.com/poi/%E9%87%91%E5%B1%B1%E7%99%BE%E8%8D%89%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/@12541106.635,2547728.44,19z?uid=92e73f55f9ab4d8ae81e972e&info_merge=1&isBizPoi=false&ugc_type=3&ugc_ver=1&device_ratio=2&compat=1&querytype=detailConInfo&da_src=shareurl" data-title="点击查看导航"></a>
 		</div>
+		<copyright></copyright>
 	</div>
 </template>
 
 <style lang="scss">
 .contact-page {
+	overflow: hidden;
 	background-color: #f0f0f0;
 }
 .contact-banner {
+	width: 100%;
 	height: 350px;
 	background: url("http://static.o-home.com/cjzs/views/web/contact/img/banner_413733d.jpg") no-repeat center/cover;
 }
@@ -44,15 +47,15 @@
 .contact-detail {
 	display: flex;
 	overflow: hidden;
-	margin: 100px auto;
+	margin: auto 0;
 	border-radius: 10px;
 	width: 1200px;
-	height: 400px;
+	height: 450px;
 	background-color: #fff;
 	box-shadow: $box-shadow;
 	transition: all 300ms;
 	&:hover {
-		transform: translate3d(0, -10px, 0);
+		transform: translate3d(0, -5px, 0);
 	}
 }
 .contact-detail-left,
