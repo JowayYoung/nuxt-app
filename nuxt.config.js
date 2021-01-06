@@ -51,7 +51,7 @@ export default {
 			{ charset: "utf-8" },
 			{ name: "viewport", content: "width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1" }
 		],
-		title: "Nuxt App"
+		title: "金山百草官网"
 	},
 	loading: {
 		color: "#3c9",

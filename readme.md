@@ -12,3 +12,14 @@
 - [x] 样式引入变量，使用`@nuxtjs/style-resources`
 - [x] `window`和`document`未定义：`process.client`
 - [x] 使用`import()`导入第三方`Web库`
+
+### 进度
+
+- [ ] 首页：W
+- [ ] 产品：Y
+- [ ] 研发：Y
+- [ ] 案例：Y
+- [ ] 文化：Y
+- [ ] 新闻：W
+- [ ] 关于：W
+- [x] 联系：W

@@ -2,7 +2,7 @@
 	<div class="copyright-component">
 		<div class="copyright-topbox pr">
 			<nav class="copyright-nav">
-				<h3 class="copyright-nav-title">金山百草</h3>
+				<h3 class="copyright-nav-title">网站导航</h3>
 				<nuxt-link v-for="v in router" :key="v.id" :to="v.path" class="copyright-nav-item">{{v.name}}</nuxt-link>
 			</nav>
 			<nav class="copyright-nav">
@@ -18,15 +18,15 @@
 			<figure class="copyright-qrcode abs-cy">
 				<figcaption class="copyright-contact">
 					<p>金山百草</p>
-					<p>0757-26666672</p>
+					<p>0750-2339183</p>
 					<p>广东省·江门市·开平市</p>
 					<p>翠山湖新区西湖二路1号E7栋</p>
 				</figcaption>
-				<img src="http://static.o-home.com/cjzs/views/web/layouts/img/QR_code_4be446d.png">
+				<img src="https://static.o-home.com/cjzs/views/web/layouts/img/QR_code_4be446d.png">
 			</figure>
 		</div>
 		<div class="copyright-bottombox">
-			<span>©&nbsp;2018-2020&nbsp;YuyangIT</span>
+			<span>©&nbsp;2018-2021&nbsp;YuyangIT</span>
 			<a class="copyright-link" href="http://www.beian.miit.gov.cn">粤ICP备18146613号</a>
 		</div>
 	</div>
