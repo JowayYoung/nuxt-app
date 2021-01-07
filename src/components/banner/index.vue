@@ -1,5 +1,5 @@
 <template>
-	<div class="banner-component flex-ct-y" :style="{ backgroundImage: `url(${bgimg})` }">
+	<div class="banner-component flex-ct-y" :style="{ backgroundImage: `url(${cover})` }">
 		<h3 class="banner-title">{{title}}</h3>
 		<p v-for="v in descs" :key="v" class="banner-desc">{{v}}</p>
 	</div>
@@ -32,7 +32,7 @@
 export default {
 	name: "banner",
 	props: {
-		bgimg: {
+		cover: {
 			default: "",
 			type: String
 		},

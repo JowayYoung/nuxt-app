@@ -1,11 +1,7 @@
 <template>
 	<div class="news-page">
 		<navbar></navbar>
-		<banner
-			title="新闻事件"
-			desc="坐拥广东省示范性产业转移工业园、广东省产业转移十大重点园区|美康泉生物科技有限公司位于开平市翠山湖工业园，隶属于香港天鹰国际控股有限公司。是一家集化妆品研发、生产、OEM/ODM于一体的国际化企业"
-			bgimg="https://static.o-home.com/cjzs/views/web/business/img/banner_6f45551.jpg"
-		></banner>
+		<banner title="新闻事件" :desc="desc" :cover="cover"></banner>
 		<nav class="news-list">
 			<nuxt-link v-for="v in news" :key="v.id" class="news-item pr" :to="`/news/${v.id}`">
 				<i :style="{ backgroundImage: `url(${v.cover})`}"></i>
@@ -79,12 +75,17 @@
 </style>
 
 <script>
+import ImgBanner from "../../assets/img/bg/news-bg.jpg";
 import JsonNews from "../../assets/json/news.json";
 
 export default {
 	name: "news",
 	data() {
-		return { news: JsonNews };
+		return {
+			cover: ImgBanner,
+			desc: "坐拥广东省示范性产业转移工业园、广东省产业转移十大重点园区|美康泉生物科技有限公司位于开平市翠山湖工业园，隶属于香港天鹰国际控股有限公司。是一家集化妆品研发、生产、OEM/ODM于一体的国际化企业",
+			news: JsonNews
+		};
 	}
 };
 </script>
