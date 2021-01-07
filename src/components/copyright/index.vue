@@ -26,8 +26,8 @@
 			</figure>
 		</div>
 		<div class="copyright-bottombox">
-			<span>©&nbsp;2018-2021&nbsp;YuyangIT</span>
-			<a class="copyright-link" href="http://www.beian.miit.gov.cn">粤ICP备18146613号</a>
+			<span>Copyright © 2020 广东金山百草健康产业有限公司 版权所有</span>
+			<a class="copyright-link" href="https://beian.miit.gov.cn">粤ICP备18146613号</a>
 		</div>
 	</div>
 </template>
@@ -108,6 +108,7 @@
 }
 .copyright-link {
 	margin-left: 10px;
+	font-size: 14px;
 	color: #666;
 	&:hover {
 		text-decoration: underline;

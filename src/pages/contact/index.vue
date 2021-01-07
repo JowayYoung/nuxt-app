@@ -1,6 +1,5 @@
 <template>
-	<div class="contact-page">
-		<navbar></navbar>
+	<div class="contact-page flex-ct-y">
 		<banner title="联系我们" :desc="desc" :cover="cover"></banner>
 		<div class="contact-detail">
 			<div class="contact-detail-left">
@@ -13,18 +12,14 @@
 			</div>
 			<a class="contact-detail-right flex-ct-x" href="https://map.baidu.com/poi/金山百草健康产业有限公司/@12541106.635,2547728.44,19z?uid=92e73f55f9ab4d8ae81e972e&info_merge=1&isBizPoi=false&ugc_type=3&ugc_ver=1&device_ratio=2&compat=1&querytype=detailConInfo&da_src=shareurl" target="_blank" data-title="点击查看导航"></a>
 		</div>
-		<copyright></copyright>
 	</div>
 </template>
 
 <style lang="scss">
-.contact-page {
-	background-color: #f0f0f0;
-}
 .contact-detail {
 	display: flex;
 	overflow: hidden;
-	margin: 100px auto;
+	margin-top: 100px;
 	border-radius: 10px;
 	width: 1200px;
 	height: 450px;
@@ -76,6 +71,7 @@ import ImgBanner from "../../assets/img/bg/contact-bg.jpg";
 
 export default {
 	name: "contact",
+	layout: "main",
 	data() {
 		return {
 			cover: ImgBanner,
