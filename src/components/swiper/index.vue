@@ -33,7 +33,7 @@
 }
 .swiper-pagination-bullet {
 	transition: all 300ms;
-	&.swiper-pagination-bullet-active {
+	&-active {
 		background-color: $green;
 	}
 }

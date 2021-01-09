@@ -11,15 +11,19 @@
 }
 ::-webkit-scrollbar-thumb {
 	border-radius: 3px;
-	background-image: linear-gradient(135deg, $green, $blue);
+	background-image: linear-gradient(135deg, $blue, $green);
 }
 html {
 	@include autoResponse(lg) {
 		font-size: calc(100vw / 7.5);
 	}
 }
+body.static {
+	overflow: hidden;
+	height: 100vh;
+}
 div[class*=page] {
-	padding-bottom: 100px;
+	padding-bottom: 150px;
 	background-color: #f0f0f0;
 }
 .red {

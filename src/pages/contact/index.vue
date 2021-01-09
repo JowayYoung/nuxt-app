@@ -2,7 +2,7 @@
 	<div class="contact-page flex-ct-y">
 		<banner title="联系我们" :desc="desc" :cover="cover"></banner>
 		<div class="contact-detail">
-			<div class="contact-detail-left">
+			<div class="contact-detail-info">
 				<h3 class="contact-detail-title">广东金山百草健康产业有限公司</h3>
 				<p class="contact-detail-desc">经理：张生</p>
 				<p class="contact-detail-desc">手机：150-1986-3294</p>
@@ -10,7 +10,7 @@
 				<p class="contact-detail-desc">邮箱：231122895@qq.com</p>
 				<p class="contact-detail-desc">地址：广东省开平市翠山湖新区环翠西路2号2座二楼3卡</p>
 			</div>
-			<a class="contact-detail-right flex-ct-x" href="https://map.baidu.com/poi/金山百草健康产业有限公司/@12541106.635,2547728.44,19z?uid=92e73f55f9ab4d8ae81e972e&info_merge=1&isBizPoi=false&ugc_type=3&ugc_ver=1&device_ratio=2&compat=1&querytype=detailConInfo&da_src=shareurl" target="_blank" data-title="点击查看导航"></a>
+			<a class="contact-detail-map flex-ct-x" href="https://map.baidu.com/poi/金山百草健康产业有限公司/@12541106.635,2547728.44,19z?uid=92e73f55f9ab4d8ae81e972e&info_merge=1&isBizPoi=false&ugc_type=3&ugc_ver=1&device_ratio=2&compat=1&querytype=detailConInfo&da_src=shareurl" target="_blank" data-title="点击查看导航"></a>
 		</div>
 	</div>
 </template>
@@ -19,49 +19,45 @@
 .contact-detail {
 	display: flex;
 	overflow: hidden;
-	margin-top: 100px;
+	margin-top: 150px;
 	border-radius: 10px;
 	width: 1200px;
 	height: 450px;
 	background-color: #fff;
 	box-shadow: $box-shadow;
-	transition: all 300ms;
-	&:hover {
-		transform: translate3d(0, -5px, 0);
+	&-info,
+	&-map {
+		width: 50%;
 	}
-}
-.contact-detail-left,
-.contact-detail-right {
-	width: 50%;
-}
-.contact-detail-left {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	padding: 50px;
-	background-image: linear-gradient(135deg, $blue, $green);
-	color: #fff;
-}
-.contact-detail-title {
-	font-size: 30px;
-}
-.contact-detail-desc {
-	margin-top: 15px;
-	font-size: 16px;
-	&:first-of-type {
-		margin-top: 30px;
-	}
-}
-.contact-detail-right {
-	background: url("../../assets/img/map.png") no-repeat center/cover;
-	&::after {
-		padding: 10px 15px;
-		border-radius: 5px;
-		background-color: rgba(#000, .5);
-		font-weight: bold;
-		font-size: 20px;
+	&-info {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 50px;
+		background-image: $linear-blue-green;
 		color: #fff;
-		content: attr(data-title);
+	}
+	&-title {
+		font-size: 30px;
+	}
+	&-desc {
+		margin-top: 15px;
+		font-size: 16px;
+		&:first-of-type {
+			margin-top: 30px;
+		}
+	}
+	&-map {
+		background: url("../../assets/img/map.png") no-repeat center/cover;
+		&::after {
+			padding: 10px 15px;
+			border-radius: 5px;
+			background-color: rgba(#000, .5);
+			font-weight: bold;
+			font-size: 20px;
+			color: #fff;
+			content: attr(data-title);
+		}
 	}
 }
 </style>

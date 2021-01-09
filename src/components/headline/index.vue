@@ -8,7 +8,7 @@
 .headline-component {
 	margin: 50px 0;
 	width: fit-content;
-	background-image: linear-gradient(to right, $blue, $green);
+	background-image: $linear-blue-green;
 	background-clip: text;
 	font-size: 48px;
 	color: transparent;

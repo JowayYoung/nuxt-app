@@ -2,18 +2,18 @@
 	<div class="copyright-component">
 		<div class="copyright-topbox pr">
 			<nav class="copyright-nav">
-				<h3 class="copyright-nav-title">网站导航</h3>
-				<nuxt-link v-for="v in router" :key="v.id" :to="v.path" class="copyright-nav-item">{{v.name}}</nuxt-link>
+				<h3 class="copyright-title">网站导航</h3>
+				<nuxt-link v-for="v in router" :key="v.id" :to="v.path" class="copyright-item">{{v.name}}</nuxt-link>
 			</nav>
 			<nav class="copyright-nav">
-				<h3 class="copyright-nav-title">友情链接</h3>
-				<a class="copyright-nav-item" href="meikangquan.com">柏丽源</a>
-				<a class="copyright-nav-item" href="meikangquan.com">美康泉</a>
+				<h3 class="copyright-title">友情链接</h3>
+				<a class="copyright-item" href="meikangquan.com">柏丽源</a>
+				<a class="copyright-item" href="meikangquan.com">美康泉</a>
 			</nav>
 			<nav class="copyright-nav">
-				<h3 class="copyright-nav-title">客服热线</h3>
-				<a class="copyright-nav-item" href="meikangquan.com">微信客服</a>
-				<a class="copyright-nav-item" href="meikangquan.com">QQ客服</a>
+				<h3 class="copyright-title">客服热线</h3>
+				<a class="copyright-item" href="meikangquan.com">微信客服</a>
+				<a class="copyright-item" href="meikangquan.com">QQ客服</a>
 			</nav>
 			<figure class="copyright-qrcode abs-cy">
 				<figcaption class="copyright-contact">
@@ -22,7 +22,7 @@
 					<p>广东省·江门市·开平市</p>
 					<p>翠山湖新区西湖二路1号E7栋</p>
 				</figcaption>
-				<img src="https://static.o-home.com/cjzs/views/web/layouts/img/QR_code_4be446d.png">
+				<img src="@/assets/img/qrcode/contact.png">
 			</figure>
 		</div>
 		<div class="copyright-bottombox">
@@ -55,26 +55,26 @@
 	width: 100%;
 	height: 40px;
 	background-color: #181818;
-	color: #ccc;
+	color: #fff;
 }
 .copyright-nav {
 	display: flex;
 	align-items: center;
 	line-height: 40px;
 }
-.copyright-nav-title {
+.copyright-title {
 	margin-right: 40px;
 	font-size: 16px;
 	color: #fff;
 }
-.copyright-nav-item {
+.copyright-item {
 	position: relative;
 	font-size: 12px;
 	color: #fff;
 	&:hover {
 		text-decoration: underline;
 	}
-	& + .copyright-nav-item {
+	& + .copyright-item {
 		margin-left: 40px;
 		&::before {
 			position: absolute;

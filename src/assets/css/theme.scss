@@ -10,3 +10,6 @@ $cyan: #9c3;
 $box-shadow: 1px 1px 5px rgba(#000, .5);
 $text-shadow: 3px 3px 5px rgba(#000, .5);
 $drop-shadow: drop-shadow(5px 5px 10px rgba(#000, .5));
+
+// 渐变颜色
+$linear-blue-green: linear-gradient(135deg, $blue, $green);

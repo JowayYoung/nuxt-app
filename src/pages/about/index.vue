@@ -1,37 +1,106 @@
 <template>
-	<div class="about-page">
-		<navbar></navbar>
+	<div class="about-page flex-ct-y">
 		<banner title="关于公司" :desc="desc" :cover="cover"></banner>
+		<headline>公司简介</headline>
 		<div class="about-company">
-			<h3 class="gradient-title">公司简介</h3>
 			<p class="about-company-desc">网易公司（NASDAQ: NTES），1997年由创始人兼CEO丁磊先生在广州创办，2000年在美国NASDAQ股票交易所挂牌上市，是中国领先的互联网技术公司。在开发互联网应用、服务及其它技术方面，始终保持中国业界领先地位。本着对中国互联网发展强烈的使命感，缔造美好生活的愿景，网易利用最先进的互联网技术，加强人与人之间信息的交流和共享。</p>
 			<p class="about-company-desc">网易公司推出了门户网站、在线游戏、电子邮箱、在线教育、电子商务、在线音乐、网易bobo等多种服务。网易在广州天河智慧城的总部项目计划2019年1月建成，网易游戏总部将入驻。2016年，游戏业务营业收入在网易总营收中占比73.3%。2011年，网易杭州研究院启用。网易传媒等业务在北京。网易在杭州上线了网易考拉海购、网易云音乐等项目。</p>
 			<p class="about-company-desc">网易2019全年财报显示，网易公司2019年全年净收入为592.4亿元；基于非美国通用会计准则，归属于网易公司股东的持续经营净利润为156.6亿元。</p>
 			<p class="about-company-desc">2019年，网易深入推进战略聚焦，坚守内容消费领域，积极布局游戏、教育、音乐、电商等核心赛道，取得重大突破。在保持稳健增长的同时，网易有道、创新及其他等业务板块爆发强大潜力，为未来的长期发展提供源源不断的动能。</p>
 		</div>
+		<headline>创始人简介</headline>
+		<div class="about-boss">
+			<div class="about-boss-cover pr"></div>
+			<div class="about-boss-summary pr">
+				<h3 class="about-boss-title pr tac">张景耀</h3>
+				<p class="about-boss-desc">张景耀先生是天鹰国际企业集团总裁，广东省民营企业文化协会常务理事，广州市私营企业协会理事，广东省电子商务协会副会长，芙蔓诗、柏丽源、三日爱、爱之弦、玛露娜、皇子御肤、宫健美、达琪蜜、舒雅安等品牌创始人。</p>
+				<p class="about-boss-desc">张景耀先生长期关注民生问题，强调现代企业的社会责任。他不仅要求柏丽源产品研发生产上严格执行国际标准，还要求在日常生活和工作中把社会责任纳入企业的文化建设。</p>
+				<a class="about-boss-link center tac" href="https://baike.baidu.com/item/张景耀/17181381">了解详情</a>
+			</div>
+		</div>
 		<div class="about-progress">
 			<ul></ul>
 		</div>
-		<copyright></copyright>
-		<toolbar></toolbar>
 	</div>
 </template>
 
 <style lang="scss">
 .about-company {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 50px 0;
+	&-desc {
+		width: 1200px;
+		line-height: 2;
+		text-align: justify;
+		text-indent: 2em;
+		font-size: 16px;
+		color: #666;
+		& + .about-company-desc {
+			margin-top: 20px;
+		}
+	}
 }
-.about-company-desc {
-	margin-top: 20px;
-	width: 1000px;
-	line-height: 2;
-	text-align: justify;
-	text-indent: 2em;
-	font-size: 16px;
-	color: #666;
+.about-boss {
+	display: flex;
+	justify-content: space-between;
+	width: 1200px;
+	&-cover {
+		width: 600px;
+		height: 450px;
+		background: url("../../assets/img/character.jpg") no-repeat center/100% auto;
+		&::after {
+			position: absolute;
+			left: 20px;
+			right: 20px;
+			top: 20px;
+			bottom: 20px;
+			border: 1px solid #fff;
+			opacity: .5;
+			content: '';
+		}
+	}
+	&-summary {
+		display: flex;
+		flex-direction: column;
+		padding-top: 20px;
+		width: 550px;
+	}
+	&-title {
+		padding-bottom: 30px;
+		border-bottom: 1px solid #ccc;
+		font-size: 24px;
+		color: #666;
+		&::after {
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			margin-left: -100px;
+			width: 200px;
+			height: 3px;
+			background-color: $blue;
+			content: "";
+		}
+	}
+	&-desc {
+		margin-top: 20px;
+		padding: 0 20px;
+		line-height: 1.5;
+		text-align: justify;
+		text-indent: 2em;
+		font-size: 18px;
+		color: #666;
+	}
+	&-link {
+		margin-top: auto;
+		width: 200px;
+		height: 50px;
+		background-image: $linear-blue-green;
+		line-height: 50px;
+		font-size: 20px;
+		color: #fff;
+		transition: all 300ms;
+		&:hover {
+			opacity: .7;
+		}
+	}
 }
 </style>
 
@@ -40,6 +109,7 @@ import ImgBanner from "../../assets/img/bg/about-bg.jpg";
 
 export default {
 	name: "about",
+	layout: "main",
 	data() {
 		return {
 			cover: ImgBanner,
