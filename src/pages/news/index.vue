@@ -69,7 +69,7 @@
 	&-desc {
 		display: -webkit-box;
 		overflow: hidden;
-		line-height: 2;
+		line-height: 30px;
 		-webkit-line-clamp: 3;
 		text-align: justify;
 		text-indent: 2em;

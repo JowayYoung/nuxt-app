@@ -10,20 +10,38 @@
 	width: 100%;
 	height: 350px;
 	background: no-repeat center/cover;
+	@include autoResponse(mobile) {
+		height: 6rem;
+	}
 }
 .banner-title {
 	padding-bottom: 20px;
 	border-bottom: 5px solid $green;
 	font-size: 40px;
 	color: #fff;
+	@include autoResponse(mobile) {
+		padding-bottom: .2rem;
+		border-bottom-width: .06rem;
+		font-size: .6rem;
+	}
 }
 .banner-desc {
-	margin-top: 10px;
+	padding: 0 20px;
+	line-height: 30px;
 	text-shadow: $text-shadow;
 	font-size: 16px;
 	color: #fff;
 	&:first-of-type {
 		margin-top: 50px;
+	}
+	@include autoResponse(mobile) {
+		padding: 0 .4rem;
+		line-height: .4rem;
+		text-align: center;
+		font-size: .24rem;
+		&:first-of-type {
+			margin-top: .5rem;
+		}
 	}
 }
 </style>

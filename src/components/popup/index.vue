@@ -36,6 +36,10 @@
 	max-width: 80%;
 	max-height: 80%;
 	background-color: #fff;
+	@include autoResponse(mobile) {
+		padding: .4rem;
+		border-radius: .2rem;
+	}
 	&.slide-up {
 		&-enter,
 		&-leave-to {
@@ -55,10 +59,18 @@
 	height: 30px;
 	background: url("../../assets/img/icon/close.png") no-repeat center/cover;
 	cursor: pointer;
+	@include autoResponse(mobile) {
+		margin-left: .2rem;
+		width: .6rem;
+		height: .6rem;
+	}
 }
 .popup-title {
 	font-size: 16px;
 	color: #666;
+	@include autoResponse(mobile) {
+		font-size: .32rem;
+	}
 }
 </style>
 

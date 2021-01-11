@@ -1,8 +1,10 @@
 $breakpoints: (
-	xs: "only screen and (max-width: 320px)",
-	sm: "only screen and (max-width: 400px)",
-	md: "only screen and (max-width: 500px)",
-	lg: "only screen and (max-width: 768px)"
+	// xs: "only screen and (max-width: 320px)",
+	// sm: "only screen and (max-width: 400px)",
+	// md: "only screen and (max-width: 500px)",
+	// lg: "only screen and (max-width: 768px)"
+	mobile: "only screen and (max-width: 768px)",
+	pad: "only screen and (max-width: 1000px)"
 ) !default;
 @mixin autoResponse($breakpoint) {
 	$query: map-get($breakpoints, $breakpoint);

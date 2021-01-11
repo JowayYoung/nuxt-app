@@ -2,10 +2,12 @@
 	<header class="navbar-component pf">
 		<div class="navbar-wrapper center">
 			<h1 class="navbar-logo">JSBC</h1>
-			<nuxt-link v-for="v in router" :key="v.id" class="navbar-link pr flex-ct-y" :to="v.path">
-				<span class="navbar-text">{{v.name}}</span>
-				<span class="navbar-text">{{v.id}}</span>
-			</nuxt-link>
+			<nav class="narbar-list">
+				<nuxt-link v-for="v in router" :key="v.id" class="navbar-link pr flex-ct-y" :to="v.path">
+					<span class="navbar-text">{{v.name}}</span>
+					<span class="navbar-text">{{v.id}}</span>
+				</nuxt-link>
+			</nav>
 		</div>
 	</header>
 </template>
@@ -17,6 +19,9 @@
 	top: 0;
 	z-index: 99999;
 	background-image: linear-gradient(to bottom, rgba(#000, .5), transparent);
+	@include autoResponse(mobile) {
+		display: none;
+	}
 }
 .navbar-wrapper {
 	display: flex;
@@ -27,13 +32,15 @@
 }
 .navbar-logo {
 	margin-right: auto;
-	padding: 0 30px;
 	height: 50px;
 	cursor: pointer;
 	line-height: 50px;
 	text-shadow: $text-shadow;
 	font-size: 40px;
 	color: #fff;
+}
+.narbar-list {
+	display: flex;
 }
 .navbar-link {
 	width: 70px;

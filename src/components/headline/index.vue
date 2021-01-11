@@ -6,14 +6,17 @@
 
 <style lang="scss">
 .headline-component {
-	margin: 50px 0;
+	margin-top: 50px;
+	margin-bottom: 50px;
 	width: fit-content;
 	background-image: $linear-blue-green;
 	background-clip: text;
 	font-size: 48px;
 	color: transparent;
-	&.center {
-		margin: 50px auto;
+	@include autoResponse(mobile) {
+		margin-top: .5rem;
+		margin-bottom: .5rem;
+		font-size: .56rem;
 	}
 }
 </style>

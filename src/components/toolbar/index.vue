@@ -23,19 +23,31 @@
 	bottom: 10px;
 	z-index: 99999;
 	border-radius: 10px;
+	@include autoResponse(mobile) {
+		right: .1rem;
+		bottom: .1rem;
+		border-radius: .2rem;
+	}
 }
 .toolbar-item {
 	display: block;
 	width: 50px;
 	height: 50px;
-	background: rgba(#000, .5) no-repeat center/30px 30px;
+	background: rgba(#000, .5) no-repeat center/60%;
 	cursor: pointer;
 	transition: all 300ms;
 	&:hover {
 		background-color: $blue;
 	}
+	@include autoResponse(mobile) {
+		width: .8rem;
+		height: .8rem;
+	}
 	&.mobile-btn {
 		background-image: url("../../assets/img/icon/mobile.png");
+		@include autoResponse(mobile) {
+			display: none;
+		}
 	}
 	&.service-btn {
 		background-image: url("../../assets/img/icon/service.png");
@@ -51,6 +63,11 @@
 	margin-top: 10px;
 	width: 250px;
 	height: 250px;
+	@include autoResponse(mobile) {
+		margin-top: .2rem;
+		width: 4rem;
+		height: 4rem;
+	}
 }
 </style>
 

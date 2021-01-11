@@ -12,24 +12,29 @@
 </template>
 
 <style lang="scss">
-.swiper-button-prev,
-.swiper-button-next {
-	margin-top: -25px;
-	border-radius: 100%;
-	width: 50px;
-	height: 50px;
-	background-color: rgba(#000, .5);
-	&::after {
-		font-weight: bold;
-		font-size: 20px;
-		color: #fff;
+.swiper-button {
+	&-prev,
+	&-next {
+		margin-top: -25px;
+		border-radius: 100%;
+		width: 50px;
+		height: 50px;
+		background-color: rgba(#000, .5);
+		&::after {
+			font-weight: bold;
+			font-size: 20px;
+			color: #fff;
+		}
+		@include autoResponse(mobile) {
+			display: none;
+		}
 	}
-}
-.swiper-button-prev {
-	left: 20px;
-}
-.swiper-button-next {
-	right: 20px;
+	&-prev {
+		left: 20px;
+	}
+	&-next {
+		right: 20px;
+	}
 }
 .swiper-pagination-bullet {
 	transition: all 300ms;

@@ -28,7 +28,7 @@
 .about-company {
 	&-desc {
 		width: 1200px;
-		line-height: 2;
+		line-height: 30px;
 		text-align: justify;
 		text-indent: 2em;
 		font-size: 16px;
@@ -82,7 +82,7 @@
 	&-desc {
 		margin-top: 20px;
 		padding: 0 20px;
-		line-height: 1.5;
+		line-height: 30px;
 		text-align: justify;
 		text-indent: 2em;
 		font-size: 18px;

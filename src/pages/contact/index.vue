@@ -21,13 +21,27 @@
 	overflow: hidden;
 	margin-top: 150px;
 	border-radius: 10px;
-	width: 1200px;
-	height: 450px;
+	width: 100%;
+	max-width: 1200px;
 	background-color: #fff;
 	box-shadow: $box-shadow;
+	@include autoResponse(pad) {
+		margin-top: 50px;
+	}
+	@include autoResponse(mobile) {
+		display: flex;
+		flex-direction: column;
+		margin-top: 1rem;
+		width: 80%;
+	}
 	&-info,
 	&-map {
 		width: 50%;
+		height: 450px;
+		@include autoResponse(mobile) {
+			width: 100%;
+			height: 5.5rem;
+		}
 	}
 	&-info {
 		display: flex;
@@ -36,15 +50,29 @@
 		padding: 50px;
 		background-image: $linear-blue-green;
 		color: #fff;
+		@include autoResponse(mobile) {
+			padding: .4rem;
+		}
 	}
 	&-title {
 		font-size: 30px;
+		@include autoResponse(mobile) {
+			text-align: center;
+			font-size: .36rem;
+		}
 	}
 	&-desc {
-		margin-top: 15px;
+		line-height: 30px;
 		font-size: 16px;
 		&:first-of-type {
 			margin-top: 30px;
+		}
+		@include autoResponse(mobile) {
+			line-height: .6rem;
+			font-size: .32rem;
+			&:first-of-type {
+				margin-top: .4rem;
+			}
 		}
 	}
 	&-map {
@@ -57,6 +85,13 @@
 			font-size: 20px;
 			color: #fff;
 			content: attr(data-title);
+		}
+		@include autoResponse(mobile) {
+			&::after {
+				padding: .2rem .3rem;
+				border-radius: .1rem;
+				font-size: .32rem;
+			}
 		}
 	}
 }
