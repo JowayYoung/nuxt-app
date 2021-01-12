@@ -14,14 +14,15 @@
 		<ul class="news-contact">
 			<li class="news-contact-way interview">
 				<h3 class="news-contact-title">采访联系</h3>
-				<a class="news-contact-btn tac" @click="isTel = true">150-1986-3294</a>
+				<a class="news-contact-btn flex-ct-x" @click="isTel = true">150-1986-3294</a>
 			</li>
 			<li class="news-contact-way question">
 				<h3 class="news-contact-title">媒体垂询</h3>
-				<p class="news-contact-desc">如有任何疑问，请发送邮件给我们留言<br>我们的邮箱是 <b class="blue">231122895@qq.com</b></p>
+				<p class="news-contact-desc" @click="isEmail = true">如有任何疑问，请发送邮件给我们留言<br>我们的邮箱是 <b class="blue">231122895@qq.com</b></p>
 			</li>
 		</ul>
-		<popup v-model="isTel" title="请拨打：150-1986-3294"></popup>
+		<popup v-model="isTel" title="请拨打至：150-1986-3294"></popup>
+		<popup v-model="isEmail" title="请发送至：231122895@qq.com"></popup>
 	</div>
 </template>
 
@@ -29,7 +30,8 @@
 .news-info {
 	overflow: hidden;
 	border-radius: 10px;
-	width: 1200px;
+	width: 100%;
+	max-width: 1200px;
 	&-item {
 		display: flex;
 		overflow: hidden;
@@ -87,15 +89,23 @@
 .news-contact {
 	display: flex;
 	justify-content: space-between;
-	width: 1200px;
+	width: 100%;
+	max-width: 1200px;
+	@include autoResponse(pad) {
+		padding: 0 40px;
+	}
+	@include autoResponse(mobile) {
+		display: block;
+		padding: 0 .4rem;
+	}
 	&-way {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		padding-left: 60px;
 		border-radius: 10px;
-		width: 580px;
-		height: 240px;
+		width: calc((100% - 40px) / 2);
+		height: 200px;
 		background: no-repeat right center/auto 100%;
 		box-shadow: $box-shadow;
 		&.interview {
@@ -104,10 +114,24 @@
 		&.question {
 			background-image: url("../../assets/img/news-question.png");
 		}
+		@include autoResponse(mobile) {
+			align-items: center;
+			padding-left: 0;
+			width: 100%;
+			& + .news-contact-way {
+				margin-top: .4rem;
+			}
+		}
 	}
 	&-title {
 		margin-bottom: 40px;
 		font-size: 28px;
+		@include autoResponse(mobile) {
+			margin-bottom: .6rem;
+			text-shadow: $text-shadow;
+			font-size: .56rem;
+			color: #fff;
+		}
 	}
 	&-btn {
 		border: 1px solid #005aab;
@@ -116,15 +140,30 @@
 		height: 40px;
 		background-color: transparent;
 		cursor: pointer;
-		line-height: 38px;
 		font-weight: bold;
 		font-size: 16px;
 		color: $blue;
+		@include autoResponse(mobile) {
+			border: none;
+			border-radius: .2rem;
+			width: 3rem;
+			height: .8rem;
+			background-image: $linear-blue-green;
+			font-size: .32rem;
+			color: #fff;
+		}
 	}
 	&-desc {
+		cursor: pointer;
 		line-height: 20px;
 		text-align: justify;
 		color: #666;
+		@include autoResponse(mobile) {
+			line-height: .4rem;
+			text-shadow: $text-shadow;
+			font-size: .28rem;
+			color: #fff;
+		}
 	}
 }
 </style>
@@ -140,6 +179,7 @@ export default {
 		return {
 			cover: ImgBanner,
 			desc: "坐拥广东省示范性产业转移工业园、广东省产业转移十大重点园区|美康泉生物科技有限公司位于开平市翠山湖工业园，隶属于香港天鹰国际控股有限公司。是一家集化妆品研发、生产、OEM/ODM于一体的国际化企业",
+			isEmail: false,
 			isTel: false,
 			news: JsonNews
 		};

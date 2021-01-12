@@ -27,12 +27,12 @@
 	box-shadow: $box-shadow;
 	@include autoResponse(pad) {
 		margin-top: 50px;
+		width: calc(100% - 80px);
 	}
 	@include autoResponse(mobile) {
-		display: flex;
-		flex-direction: column;
+		display: block;
 		margin-top: 1rem;
-		width: 80%;
+		width: calc(100% - .8rem);
 	}
 	&-info,
 	&-map {
@@ -63,6 +63,7 @@
 	}
 	&-desc {
 		line-height: 30px;
+		text-align: justify;
 		font-size: 16px;
 		&:first-of-type {
 			margin-top: 30px;
@@ -90,7 +91,7 @@
 			&::after {
 				padding: .2rem .3rem;
 				border-radius: .1rem;
-				font-size: .32rem;
+				font-size: .4rem;
 			}
 		}
 	}

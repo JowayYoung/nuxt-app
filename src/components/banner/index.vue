@@ -1,7 +1,9 @@
 <template>
 	<div class="banner-component flex-ct-y" :style="{ backgroundImage: `url(${cover})` }">
 		<h3 class="banner-title">{{title}}</h3>
-		<p v-for="v in descs" :key="v" class="banner-desc">{{v}}</p>
+		<p class="banner-desc tac">
+			<span v-for="v in descs" :key="v" class="banner-desc-text">{{v}}</span>
+		</p>
 	</div>
 </template>
 
@@ -26,21 +28,20 @@
 	}
 }
 .banner-desc {
-	padding: 0 20px;
+	padding: 50px 20px 0;
 	line-height: 30px;
 	text-shadow: $text-shadow;
 	font-size: 16px;
 	color: #fff;
-	&:first-of-type {
-		margin-top: 50px;
-	}
 	@include autoResponse(mobile) {
-		padding: 0 .4rem;
-		line-height: .4rem;
-		text-align: center;
-		font-size: .24rem;
-		&:first-of-type {
-			margin-top: .5rem;
+		padding: .6rem .4rem 0;
+		line-height: .6rem;
+		font-size: .32rem;
+	}
+	&-text {
+		display: block;
+		@include autoResponse(pad) {
+			display: inline;
 		}
 	}
 }

@@ -95,7 +95,7 @@
 		align-items: flex-end;
 		margin-right: 20px;
 		width: 220px;
-		line-height: 28px;
+		line-height: 30px;
 		font-weight: bold;
 		font-size: 14px;
 		color: $green;
@@ -110,7 +110,7 @@
 	background-color: #181818;
 	color: #fff;
 	@include autoResponse(mobile) {
-		height: .6rem;
+		height: .8rem;
 	}
 	&-desc {
 		margin-right: 10px;
@@ -125,7 +125,7 @@
 			text-decoration: underline;
 		}
 		@include autoResponse(mobile) {
-			font-size: .24rem;
+			font-size: .28rem;
 			&::before {
 				color: #fff;
 				content: "Copyright © 2020 广东金山 ";
