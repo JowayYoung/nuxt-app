@@ -25,7 +25,7 @@
 	border-radius: 10px;
 	@include autoResponse(mobile) {
 		right: .1rem;
-		bottom: .1rem;
+		bottom: 1rem;
 		border-radius: .2rem;
 	}
 }
