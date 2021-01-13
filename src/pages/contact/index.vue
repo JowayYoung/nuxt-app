@@ -18,26 +18,24 @@
 <style lang="scss">
 .contact-detail {
 	display: flex;
-	overflow: hidden;
 	margin-top: 150px;
-	border-radius: 10px;
 	width: 100%;
 	max-width: 1200px;
-	background-color: #fff;
-	box-shadow: $box-shadow;
 	@include autoResponse(pad) {
 		margin-top: 50px;
-		width: calc(100% - 80px);
+		padding: 0 40px;
 	}
 	@include autoResponse(mobile) {
 		display: block;
 		margin-top: 1rem;
-		width: calc(100% - .8rem);
+		padding: 0 .4rem;
 	}
 	&-info,
 	&-map {
+		overflow: hidden;
 		width: 50%;
 		height: 450px;
+		box-shadow: $box-shadow;
 		@include autoResponse(mobile) {
 			width: 100%;
 			height: 5.5rem;
@@ -48,6 +46,7 @@
 		flex-direction: column;
 		justify-content: center;
 		padding: 50px;
+		border-radius: 10px 0 0 10px;
 		background-image: $linear-blue-green;
 		color: #fff;
 		@include autoResponse(mobile) {
@@ -77,6 +76,7 @@
 		}
 	}
 	&-map {
+		border-radius: 0 10px 10px 0;
 		background: url("../../assets/img/map.png") no-repeat center/cover;
 		&::after {
 			padding: 10px 15px;

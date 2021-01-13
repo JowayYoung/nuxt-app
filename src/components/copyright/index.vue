@@ -19,14 +19,14 @@
 				<figcaption class="copyright-nav-contact">
 					<p>金山百草</p>
 					<p>0750-2339183</p>
-					<p>广东省·江门市·开平市</p>
-					<p>翠山湖新区西湖二路1号E7栋</p>
+					<p>广东省·江门市·开平区</p>
+					<p>翠山湖新区环翠西路2号2座二楼3卡</p>
 				</figcaption>
 				<img src="@/assets/img/qrcode/contact.png">
 			</figure>
 		</div>
 		<div class="copyright-statement">
-			<span class="copyright-statement-desc">Copyright © 2020 广东金山百草健康产业有限公司 版权所有</span>
+			<span class="copyright-statement-desc">Copyright © 2021 广东金山百草健康产业有限公司 版权所有</span>
 			<a class="copyright-statement-mark" href="https://beian.miit.gov.cn">粤ICP备18146613号</a>
 		</div>
 	</div>
@@ -128,7 +128,7 @@
 			font-size: .28rem;
 			&::before {
 				color: #fff;
-				content: "Copyright © 2020 广东金山 ";
+				content: "Copyright © 2021 广东金山 ";
 			}
 		}
 	}

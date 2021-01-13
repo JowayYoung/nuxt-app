@@ -29,9 +29,14 @@
 <style lang="scss">
 .news-info {
 	overflow: hidden;
-	border-radius: 10px;
 	width: 100%;
 	max-width: 1200px;
+	@include autoResponse(pad) {
+		padding: 0 40px;
+	}
+	@include autoResponse(mobile) {
+		padding: 0 .4rem;
+	}
 	&-item {
 		display: flex;
 		overflow: hidden;
@@ -43,6 +48,15 @@
 		transition: all 300ms;
 		& + .news-info-item {
 			border-top: 1px solid #f0f0f0;
+		}
+		@include autoResponse(mobile) {
+			padding: .3rem;
+			border-radius: .2rem;
+			height: auto;
+			& + .news-info-item {
+				margin-top: .4rem;
+				border-top: none;
+			}
 		}
 		&:hover {
 			background-color: transparent;
@@ -62,11 +76,22 @@
 		height: 150px;
 		background: no-repeat center/cover;
 		box-shadow: 3px 4px 12px 0 rgba(#000, .5);
+		@include autoResponse(mobile) {
+			position: static;
+			margin-left: 0;
+			border-radius: .1rem;
+			width: 100%;
+			height: 3rem;
+		}
 	}
 	&-title {
 		padding: 10px 0;
 		font-size: 20px;
 		transition: all 300ms;
+		@include autoResponse(mobile) {
+			padding: .4rem 0 .2rem;
+			font-size: .4rem;
+		}
 	}
 	&-desc {
 		display: -webkit-box;
@@ -78,12 +103,28 @@
 		font-size: 14px;
 		color: #666;
 		-webkit-box-orient: vertical;
+		@include autoResponse(mobile) {
+			line-height: .5rem;
+			text-indent: 0;
+			font-size: .28rem;
+		}
 	}
 	&-date {
 		margin-top: auto;
 		font-size: 12px;
 		color: $blue;
 		transition: all 300ms;
+		@include autoResponse(mobile) {
+			position: absolute;
+			right: .3rem;
+			top: .3rem;
+			margin-top: 0;
+			padding: .1rem .2rem;
+			border-top-right-radius: .1rem;
+			background-color: rgba(#000, .5);
+			font-size: .24rem;
+			color: #fff;
+		}
 	}
 }
 .news-contact {
