@@ -20,6 +20,7 @@ html {
 }
 body.static {
 	overflow: hidden;
+	padding-right: 6px;
 	height: 100vh;
 }
 div[class*=page] {
