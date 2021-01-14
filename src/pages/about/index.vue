@@ -26,8 +26,15 @@
 
 <style lang="scss">
 .about-company {
+	width: 100%;
+	max-width: 1200px;
+	@include autoResponse(pad) {
+		padding: 0 40px;
+	}
+	@include autoResponse(mobile) {
+		padding: 0 .4rem;
+	}
 	&-desc {
-		width: 1200px;
 		line-height: 30px;
 		text-align: justify;
 		text-indent: 2em;
@@ -36,12 +43,27 @@
 		& + .about-company-desc {
 			margin-top: 20px;
 		}
+		@include autoResponse(mobile) {
+			line-height: .6rem;
+			font-size: .32rem;
+			& + .about-company-desc {
+				margin-top: .4rem;
+			}
+		}
 	}
 }
 .about-boss {
 	display: flex;
 	justify-content: space-between;
-	width: 1200px;
+	width: 100%;
+	max-width: 1200px;
+	@include autoResponse(pad) {
+		padding: 0 40px;
+	}
+	@include autoResponse(mobile) {
+		display: block;
+		padding: 0 .4rem;
+	}
 	&-cover {
 		width: 600px;
 		height: 450px;
@@ -56,12 +78,26 @@
 			opacity: .5;
 			content: '';
 		}
+		@include autoResponse(mobile) {
+			width: 100%;
+			height: 6rem;
+			&::after {
+				left: .4rem;
+				right: .4rem;
+				top: .4rem;
+				bottom: .4rem;
+			}
+		}
 	}
 	&-summary {
 		display: flex;
 		flex-direction: column;
 		padding-top: 20px;
 		width: 550px;
+		@include autoResponse(mobile) {
+			padding-top: .6rem;
+			width: 100%;
+		}
 	}
 	&-title {
 		padding-bottom: 30px;
@@ -78,6 +114,15 @@
 			background-color: $blue;
 			content: "";
 		}
+		@include autoResponse(mobile) {
+			padding-bottom: .6rem;
+			font-size: .48rem;
+			&::after {
+				margin-left: -2rem;
+				width: 4rem;
+				height: .06rem;
+			}
+		}
 	}
 	&-desc {
 		margin-top: 20px;
@@ -87,6 +132,12 @@
 		text-indent: 2em;
 		font-size: 18px;
 		color: #666;
+		@include autoResponse(mobile) {
+			margin-top: .4rem;
+			padding: 0;
+			line-height: .6rem;
+			font-size: .36rem;
+		}
 	}
 	&-link {
 		margin-top: auto;
@@ -99,6 +150,13 @@
 		transition: all 300ms;
 		&:hover {
 			opacity: .7;
+		}
+		@include autoResponse(mobile) {
+			margin-top: .4rem;
+			width: 4rem;
+			height: 1rem;
+			line-height: 1rem;
+			font-size: .4rem;
 		}
 	}
 }
