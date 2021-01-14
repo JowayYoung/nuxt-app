@@ -126,7 +126,7 @@
 			font-size: .28rem;
 			&::before {
 				color: #fff;
-				content: "Copyright © 2021 广东金山 ";
+				content: "Copyright © 2021 金山百草 ";
 			}
 		}
 	}

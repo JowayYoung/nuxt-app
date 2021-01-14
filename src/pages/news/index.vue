@@ -183,6 +183,10 @@
 		font-weight: bold;
 		font-size: 16px;
 		color: $blue;
+		transition: all 300ms;
+		&:active {
+			opacity: .7;
+		}
 		@include autoResponse(mobile) {
 			border: none;
 			border-radius: .2rem;

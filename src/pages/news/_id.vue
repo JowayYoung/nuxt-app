@@ -1,6 +1,7 @@
 <template>
 	<div class="news-item-page flex-ct-y">
 		<banner title="新闻事件" :desc="desc" :cover="cover"></banner>
+		<i class="new-item-goback-btn pf round" @click="$router.go(-1)"></i>
 		<template v-if="item">
 			<headline size="small">{{item.title}}</headline>
 			<small class="news-item-date">{{item.date}} 由金山百草小编整理与编辑</small>
@@ -24,6 +25,25 @@
 </template>
 
 <style lang="scss">
+.new-item-goback-btn {
+	left: 10px;
+	bottom: 10px;
+	width: 50px;
+	height: 50px;
+	background: rgba(#000, .5) url("../../assets/img/icon/goback.png") no-repeat center/60%;
+	cursor: pointer;
+	transition: all 300ms;
+	&:active {
+		opacity: .7;
+	}
+	@include autoResponse(mobile) {
+		left: .1rem;
+		top: .1rem;
+		bottom: initial;
+		width: .8rem;
+		height: .8rem;
+	}
+}
 .news-item-date {
 	font-size: 12px;
 	color: #666;

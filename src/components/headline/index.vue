@@ -8,7 +8,7 @@
 .headline-component {
 	margin-top: 50px;
 	margin-bottom: 50px;
-	width: 100%;
+	width: fit-content;
 	max-width: 1200px;
 	background-image: $linear-blue-green;
 	background-clip: text;
@@ -22,6 +22,7 @@
 	}
 	@include autoResponse(pad) {
 		padding: 0 40px;
+		max-width: 100%;
 	}
 	@include autoResponse(mobile) {
 		margin-top: .5rem;

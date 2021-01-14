@@ -18,10 +18,13 @@ html {
 		font-size: calc(100vw / 7.5);
 	}
 }
-body.static {
-	overflow: hidden;
-	padding-right: 6px;
-	height: 100vh;
+body {
+	-webkit-overflow-scrolling: touch;
+	&.static {
+		overflow: hidden;
+		padding-right: 6px;
+		height: 100vh;
+	}
 }
 div[class*=page] {
 	padding-bottom: 150px;
