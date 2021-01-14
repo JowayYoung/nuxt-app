@@ -97,7 +97,6 @@
 		width: 220px;
 		line-height: 30px;
 		font-weight: bold;
-		font-size: 14px;
 		color: $green;
 	}
 }
@@ -119,7 +118,6 @@
 		}
 	}
 	&-mark {
-		font-size: 14px;
 		color: #666;
 		&:hover {
 			text-decoration: underline;

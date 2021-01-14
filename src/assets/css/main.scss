@@ -51,3 +51,13 @@ div[class*=page] {
 .green {
 	color: $green;
 }
+.page {
+	&-enter,
+	&-leave-active {
+		opacity: 0;
+	}
+	&-enter-active,
+	&-leave-active {
+		transition: opacity 300ms;
+	}
+}

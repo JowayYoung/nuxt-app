@@ -3,7 +3,7 @@
 		<banner title="新闻事件" :desc="desc" :cover="cover"></banner>
 		<headline>热点资讯</headline>
 		<nav class="news-info">
-			<nuxt-link v-for="v in news" :key="v.id" class="news-info-item pr" :to="`/news/${v.id}`">
+			<nuxt-link v-for="v in list" :key="v.id" class="news-info-item pr" :to="`/news/${v.id}`">
 				<i class="news-info-cover pa" :style="{ backgroundImage: `url(${v.cover})`}"></i>
 				<h3 class="news-info-title ellipsis">{{v.title}}</h3>
 				<p class="news-info-desc">{{v.desc}}</p>
@@ -100,7 +100,6 @@
 		-webkit-line-clamp: 3;
 		text-align: justify;
 		text-indent: 2em;
-		font-size: 14px;
 		color: #666;
 		-webkit-box-orient: vertical;
 		@include autoResponse(mobile) {
@@ -222,7 +221,7 @@ export default {
 			desc: "坐拥广东省示范性产业转移工业园、广东省产业转移十大重点园区|美康泉生物科技有限公司位于开平市翠山湖工业园，隶属于香港天鹰国际控股有限公司。是一家集化妆品研发、生产、OEM/ODM于一体的国际化企业",
 			isEmail: false,
 			isTel: false,
-			news: JsonNews
+			list: JsonNews
 		};
 	}
 };
