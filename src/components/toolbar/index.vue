@@ -83,7 +83,7 @@ export default {
 	},
 	methods: {
 		gotop() {
-			process.client && document.body.scrollIntoView({ behavior: "smooth" });
+			document.body.scrollIntoView({ behavior: "smooth" });
 		}
 	}
 };

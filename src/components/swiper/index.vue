@@ -65,7 +65,7 @@ export default {
 		}
 	},
 	async mounted() {
-		process.client && setTimeout(() => new Swiper(".swiper-container", {
+		new Swiper(".swiper-component", {
 			autoplay: { delay: 5000 },
 			loop: true,
 			observer: true,
@@ -76,7 +76,7 @@ export default {
 				nextEl: ".swiper-button-next",
 				prevEl: ".swiper-button-prev"
 			}
-		}), 500);
+		});
 	}
 };
 </script>

@@ -27,14 +27,13 @@ export default {
 	env: {
 		RUN_ENV: process.env.RUN_ENV
 	},
-	mode: "universal",
 	modules: [
 		"@nuxtjs/axios",
 		"@nuxtjs/style-resources"
 	],
 	server: {
 		host: "127.0.0.1",
-		port: 9898
+		port: 80
 	},
 	srcDir: "src/",
 	/** 文件骨架 **/
