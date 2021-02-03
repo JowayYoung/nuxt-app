@@ -67,7 +67,6 @@
 		line-height: 30px;
 		text-indent: 2em;
 		font-size: 16px;
-		word-break: break-all;
 		transition: all 300ms;
 		@include autoResponse(mobile) {
 			margin-top: .6rem;

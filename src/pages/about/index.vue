@@ -23,7 +23,7 @@
 			<ul class="about-progress-timeline">
 				<li v-for="(v, i) in list" :key="v.year" :class="['about-progress-year pr flex-ct-x', { active: i === index }]" @click="e => select(e, i)">{{v.year}}</li>
 			</ul>
-			<div class="about-progress-summary swiper-container swiper-container-initialized swiper-container-vertical">
+			<div class="about-progress-summary swiper-container swiper-container-initialized swiper-container-horizontal">
 				<div class="swiper-wrapper">
 					<div v-for="v in list" :key="v.year" class="about-progress-summary-item swiper-slide">
 						<h3 class="about-progress-title pr">
@@ -34,6 +34,7 @@
 						<p v-for="w in v.desc" :key="w" class="about-progress-desc">{{w}}</p>
 					</div>
 				</div>
+				<div class="about-progress-summary-pagination swiper-pagination"></div>
 			</div>
 		</div>
 	</div>
@@ -187,7 +188,6 @@
 .about-progress {
 	display: flex;
 	overflow: hidden;
-	border-radius: 10px;
 	width: 100%;
 	max-width: 1200px;
 	height: 600px;
@@ -196,13 +196,13 @@
 		padding: 0 40px;
 	}
 	@include autoResponse(mobile) {
-		display: block;
-		padding: 0 .4rem;
+		flex-direction: column;
+		padding: 0;
+		height: 75vh;
 	}
 	&-timeline,
 	&-summary {
 		background-color: #fff;
-		color: #fff;
 	}
 	&-timeline {
 		overflow: auto;
@@ -213,12 +213,43 @@
 		&::-webkit-scrollbar-thumb {
 			background-image: none;
 		}
+		@include autoResponse(mobile) {
+			display: none;
+		}
 	}
 	&-summary {
 		flex: 1;
+		@include autoResponse(mobile) {
+			flex: none;
+			width: 100%;
+			height: 100%;
+		}
 		&-item {
 			overflow: auto;
 			padding: 20px 40px;
+			transition: all 300ms;
+			@include autoResponse(mobile) {
+				padding: .4rem;
+			}
+		}
+		&-pagination {
+			opacity: 0;
+			pointer-events: none;
+			@include autoResponse(mobile) {
+				left: 50% !important;
+				bottom: .1rem !important;
+				width: 100% !important;
+				opacity: 1;
+				pointer-events: auto;
+				transform: translateX(-50%);
+			}
+			.swiper-pagination-bullet {
+				margin: 0 .06rem !important;
+				transition: all 300ms;
+				&-active {
+					background-color: $green;
+				}
+			}
 		}
 	}
 	&-year {
@@ -266,6 +297,7 @@
 		justify-content: space-between;
 		align-items: center;
 		height: 60px;
+		transition: all 300ms;
 		&::after {
 			position: absolute;
 			left: 0;
@@ -274,22 +306,44 @@
 			height: 4px;
 			background-image: $linear-blue-green;
 			content: "";
+			transition: all 300ms;
+		}
+		@include autoResponse(mobile) {
+			height: 1rem;
+			&::after {
+				width: 2.4rem;
+				height: .08rem;
+			}
 		}
 		&-core {
 			background-image: $linear-blue-green;
 			background-clip: text;
 			font-size: 40px;
 			color: transparent;
+			transition: all 300ms;
+			@include autoResponse(mobile) {
+				font-size: .6rem;
+			}
 		}
 		&-year {
 			font-size: 30px;
 			color: #666;
+			transition: all 300ms;
+			@include autoResponse(mobile) {
+				font-size: .4rem;
+			}
 		}
 	}
 	&-cover {
 		margin-top: 10px;
 		border-radius: 5px;
 		max-width: 500px;
+		transition: all 300ms;
+		@include autoResponse(mobile) {
+			margin-top: .2rem;
+			border-radius: .1rem;
+			max-width: 100%;
+		}
 	}
 	&-desc {
 		padding: 20px 0 10px;
@@ -299,8 +353,17 @@
 		text-indent: 2em;
 		font-size: 16px;
 		color: #666;
+		transition: all 300ms;
 		&:first-of-type {
 			padding-top: 40px;
+		}
+		@include autoResponse(mobile) {
+			padding: .4rem 0 .2rem;
+			line-height: .6rem;
+			font-size: .32rem;
+			&:first-of-type {
+				padding-top: .8rem;
+			}
 		}
 	}
 }
@@ -328,7 +391,6 @@ export default {
 	mounted() {
 		const self = this;
 		this.swiper = this.swiper = new Swiper(".about-progress-summary", {
-			direction: "vertical",
 			observer: true,
 			observeParents: true,
 			observeSlideChildren: true,
@@ -338,7 +400,8 @@ export default {
 					document.querySelector(`.about-progress-year:nth-child(${self.index + 1})`).scrollIntoView({ behavior: "smooth" });
 				}
 			},
-			speed: 500
+			speed: 500,
+			pagination: { el: ".about-progress-summary-pagination" }
 		});
 	},
 	methods: {
