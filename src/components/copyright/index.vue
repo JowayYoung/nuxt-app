@@ -108,6 +108,7 @@
 	height: 40px;
 	background-color: #181818;
 	color: #fff;
+	transition: all 300ms;
 	@include autoResponse(mobile) {
 		height: .8rem;
 	}
@@ -119,6 +120,7 @@
 	}
 	&-mark {
 		color: #666;
+		transition: all 300ms;
 		&:hover {
 			text-decoration: underline;
 		}

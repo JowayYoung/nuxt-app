@@ -23,6 +23,7 @@
 	bottom: 10px;
 	z-index: 99999;
 	border-radius: 10px;
+	transition: all 300ms;
 	@include autoResponse(mobile) {
 		right: .1rem;
 		bottom: 1rem;
@@ -63,6 +64,7 @@
 	margin-top: 10px;
 	width: 250px;
 	height: 250px;
+	transition: all 300ms;
 	@include autoResponse(mobile) {
 		margin-top: .2rem;
 		width: 4rem;

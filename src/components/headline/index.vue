@@ -14,6 +14,7 @@
 	background-clip: text;
 	font-size: 48px;
 	color: transparent;
+	transition: all 300ms;
 	&.medium {
 		font-size: 40px;
 	}

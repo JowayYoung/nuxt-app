@@ -30,8 +30,8 @@
 							<span class="about-progress-title-core">{{v.title || "暂无标题"}}</span>
 							<small class="about-progress-title-year">{{v.year}}</small>
 						</h3>
+						<img class="about-progress-cover center" src="https://imagegroup1.haier.com/about-haier/history/pic/W020200623520622322874.jpg">
 						<p v-for="w in v.desc" :key="w" class="about-progress-desc">{{w}}</p>
-						<img class="about-progress-cover" src="https://imagegroup1.haier.com/about-haier/history/pic/W020200623520622322874.jpg">
 					</div>
 				</div>
 			</div>
@@ -43,6 +43,7 @@
 .about-company {
 	width: 100%;
 	max-width: 1200px;
+	transition: all 300ms;
 	@include autoResponse(pad) {
 		padding: 0 40px;
 	}
@@ -55,6 +56,7 @@
 		text-indent: 2em;
 		font-size: 16px;
 		color: #666;
+		transition: all 300ms;
 		& + .about-company-desc {
 			margin-top: 20px;
 		}
@@ -72,6 +74,7 @@
 	justify-content: space-between;
 	width: 100%;
 	max-width: 1200px;
+	transition: all 300ms;
 	@include autoResponse(pad) {
 		padding: 0 40px;
 	}
@@ -83,6 +86,7 @@
 		width: 600px;
 		height: 450px;
 		background: url("../../assets/img/character.jpg") no-repeat center/100% auto;
+		transition: all 300ms;
 		&::after {
 			position: absolute;
 			left: 20px;
@@ -92,6 +96,7 @@
 			border: 1px solid #fff;
 			opacity: .5;
 			content: '';
+			transition: all 300ms;
 		}
 		@include autoResponse(mobile) {
 			width: 100%;
@@ -109,6 +114,7 @@
 		flex-direction: column;
 		padding-top: 20px;
 		width: 550px;
+		transition: all 300ms;
 		@include autoResponse(mobile) {
 			padding-top: .6rem;
 			width: 100%;
@@ -119,6 +125,7 @@
 		border-bottom: 1px solid #ccc;
 		font-size: 24px;
 		color: #666;
+		transition: all 300ms;
 		&::after {
 			position: absolute;
 			left: 50%;
@@ -128,6 +135,7 @@
 			height: 3px;
 			background-color: $blue;
 			content: "";
+			transition: all 300ms;
 		}
 		@include autoResponse(mobile) {
 			padding-bottom: .6rem;
@@ -147,6 +155,7 @@
 		text-indent: 2em;
 		font-size: 18px;
 		color: #666;
+		transition: all 300ms;
 		@include autoResponse(mobile) {
 			margin-top: .4rem;
 			padding: 0;
@@ -182,8 +191,19 @@
 	width: 100%;
 	max-width: 1200px;
 	height: 600px;
-	background-color: #fff;
-	color: #fff;
+	transition: all 300ms;
+	@include autoResponse(pad) {
+		padding: 0 40px;
+	}
+	@include autoResponse(mobile) {
+		display: block;
+		padding: 0 .4rem;
+	}
+	&-timeline,
+	&-summary {
+		background-color: #fff;
+		color: #fff;
+	}
 	&-timeline {
 		overflow: auto;
 		border-right: 1px solid #ccc;
@@ -266,21 +286,22 @@
 			color: #666;
 		}
 	}
+	&-cover {
+		margin-top: 10px;
+		border-radius: 5px;
+		max-width: 500px;
+	}
 	&-desc {
 		padding: 20px 0 10px;
 		border-bottom: 1px dashed #ccc;
 		line-height: 30px;
 		text-align: justify;
+		text-indent: 2em;
 		font-size: 16px;
 		color: #666;
 		&:first-of-type {
 			padding-top: 40px;
 		}
-	}
-	&-cover {
-		margin: 10px auto;
-		border-radius: 5px;
-		max-width: 500px;
 	}
 }
 </style>

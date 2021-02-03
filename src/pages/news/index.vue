@@ -31,6 +31,7 @@
 	overflow: hidden;
 	width: 100%;
 	max-width: 1200px;
+	transition: all 300ms;
 	@include autoResponse(pad) {
 		padding: 0 40px;
 	}
@@ -76,6 +77,7 @@
 		height: 150px;
 		background: no-repeat center/cover;
 		box-shadow: 3px 4px 12px 0 rgba(#000, .5);
+		transition: all 300ms;
 		@include autoResponse(mobile) {
 			position: static;
 			margin-left: 0;
@@ -102,6 +104,7 @@
 		text-indent: 2em;
 		color: #666;
 		-webkit-box-orient: vertical;
+		transition: all 300ms;
 		@include autoResponse(mobile) {
 			line-height: .5rem;
 			text-indent: 0;
@@ -131,6 +134,7 @@
 	justify-content: space-between;
 	width: 100%;
 	max-width: 1200px;
+	transition: all 300ms;
 	@include autoResponse(pad) {
 		padding: 0 40px;
 	}
@@ -148,6 +152,7 @@
 		height: 200px;
 		background: no-repeat right center/auto 100%;
 		box-shadow: $box-shadow;
+		transition: all 300ms;
 		&.interview {
 			background-image: url("../../assets/img/news-interview.png");
 		}
@@ -166,6 +171,7 @@
 	&-title {
 		margin-bottom: 40px;
 		font-size: 28px;
+		transition: all 300ms;
 		@include autoResponse(mobile) {
 			margin-bottom: .6rem;
 			text-shadow: $text-shadow;
@@ -202,6 +208,7 @@
 		line-height: 20px;
 		text-align: justify;
 		color: #666;
+		transition: all 300ms;
 		@include autoResponse(mobile) {
 			line-height: .4rem;
 			text-shadow: $text-shadow;

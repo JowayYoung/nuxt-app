@@ -12,6 +12,7 @@
 	width: 100%;
 	height: 350px;
 	background: no-repeat center/cover;
+	transition: all 300ms;
 	@include autoResponse(mobile) {
 		height: 6rem;
 	}
@@ -21,6 +22,7 @@
 	border-bottom: 5px solid $green;
 	font-size: 40px;
 	color: #fff;
+	transition: all 300ms;
 	@include autoResponse(mobile) {
 		padding-bottom: .2rem;
 		border-bottom-width: .06rem;
@@ -33,6 +35,7 @@
 	text-shadow: $text-shadow;
 	font-size: 16px;
 	color: #fff;
+	transition: all 300ms;
 	@include autoResponse(mobile) {
 		padding: .6rem .4rem 0;
 		line-height: .6rem;
