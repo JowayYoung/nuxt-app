@@ -6,7 +6,11 @@
 			<headline size="small">{{item.title}}</headline>
 			<small class="news-item-date">{{item.date}} 由金山百草小编整理与编辑</small>
 			<article class="new-item-body">
-				<p class="new-item-body-desc">5月13日，全球最具影响力的权威商业杂志之一——《福布斯》发布2020年上市公司2000强榜单。其中，碧桂园集团位列第111名，较2019年排名上升18位。</p>
+				<template v-for="v in item.desc">
+					<img v-if="judgeImg(v)" :key="v" :src="v" class="new-item-body-cover">
+					<p v-else :key="v" class="new-item-body-desc">{{v}}</p>
+				</template>
+				<!-- <p class="new-item-body-desc">5月13日，全球最具影响力的权威商业杂志之一——《福布斯》发布2020年上市公司2000强榜单。其中，碧桂园集团位列第111名，较2019年排名上升18位。</p>
 				<img class="new-item-body-cover" src="https://ecs.o-home.com/ueditor/php/upload/image/20200629/1593421789748751.jpg">
 				<p class="new-item-body-desc">《福布斯》全球上市公司2000强，与《财富》世界500强并称全球最具权威的两大商业公司排行榜。前者依据企业的销售额、利润、总资产和市值四大指标进行衡量，综合评选出全球规模最大、实力最强的上市企业。</p>
 				<p class="new-item-body-desc">此次，碧桂园以701亿美元销售额、57亿美元利润、2738亿美元总资产和278亿美元市值，继续稳居榜单200强。自2010年入选该榜单以来，碧桂园已连续第11年实现排名提升，展现出强劲的发展势头。</p>
@@ -18,7 +22,7 @@
 				<p class="new-item-body-desc">不久前，国际投行摩根大通发布研报称，对碧桂园维持增持评级，目标价为14.5港元。“在大型房企中，我们首选碧桂园等企业，其拥有强大的内控体系和土地储备，这让公司能够更快地增长。”中银国际对碧桂园评级为“强推买入”，给出17.86港元目标价，并指出，碧桂园预计会在其7000亿的未确收收入上绽放光芒，成为行业中有最大隐藏价值的开发商。</p>
 				<img class="new-item-body-cover" src="https://ecs.o-home.com/ueditor/php/upload/image/20200629/1593421824309145.jpg">
 				<p class="new-item-body-desc">目前，碧桂园已获国际权威信用评级机构——惠誉给予投资级的BBB-企业信用评级，标普及穆迪也分别给予碧桂园BB+及Ba1评级，距投资级均只有一级之遥。2019年8月，穆迪又将对碧桂园的展望由“稳定”调升至“正面”，反映出市场对于碧桂园未来发展的信心。</p>
-				<p class="new-item-body-desc">不久前，国际投行摩根大通发布研报称，对碧桂园维持增持评级，目标价为14.5港元。“在大型房企中，我们首选碧桂园等企业，其拥有强大的内控体系和土地储备，这让公司能够更快地增长。”中银国际对碧桂园评级为“强推买入”，给出17.86港元目标价，并指出，碧桂园预计会在其7000亿的未确收收入上绽放光芒，成为行业中有最大隐藏价值的开发商。</p>
+				<p class="new-item-body-desc">不久前，国际投行摩根大通发布研报称，对碧桂园维持增持评级，目标价为14.5港元。“在大型房企中，我们首选碧桂园等企业，其拥有强大的内控体系和土地储备，这让公司能够更快地增长。”中银国际对碧桂园评级为“强推买入”，给出17.86港元目标价，并指出，碧桂园预计会在其7000亿的未确收收入上绽放光芒，成为行业中有最大隐藏价值的开发商。</p> -->
 			</article>
 		</template>
 	</div>
@@ -106,6 +110,11 @@ export default {
 	mounted() {
 		const { id } = this.$route.params;
 		this.item = this.list.find(v => v.id === +id);
+	},
+	methods: {
+		judgeImg(content) {
+			return content && /^https:\/\/(.+?)\.(jpg|png)$/.test(content)
+		}
 	}
 };
 </script>

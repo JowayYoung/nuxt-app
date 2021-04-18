@@ -6,7 +6,7 @@
 			<nuxt-link v-for="v in list" :key="v.id" class="news-info-item pr" :to="`/news/${v.id}`">
 				<i class="news-info-cover pa" :style="{ backgroundImage: `url(${v.cover})`}"></i>
 				<h3 class="news-info-title ellipsis">{{v.title}}</h3>
-				<p class="news-info-desc">{{v.desc}}</p>
+				<p class="news-info-desc">{{v.desc[0]}}</p>
 				<small class="news-info-date tar">{{v.date}}</small>
 			</nuxt-link>
 		</nav>
